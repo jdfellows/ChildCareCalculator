@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/calculator.css">
+    <title>Child Care Calculator</title>
+  </head>
+  <body onload='formReset()'>
+    <div id="wrapper">
+      <form id="calculatorForm" action="#">
+        <div>
+          <div class="container">
+            <h3>Child Care Calculator</h3>
+            <label>Select Age group</label><br><br>
+            <label class='radiolabel'><input type="radio" name="ageGroup" value="infant" onclick="calculateTotal()">Infant</label><br>
+            <label class='radiolabel'><input type="radio" name="ageGroup" value="sixWeekTwoAndaHalf" onclick="calculateTotal()">6wk - 2 1/2 yr</label><br>
+            <label class='radiolabel'><input type="radio" name="ageGroup" value="twoAndaHalfToFour" onclick="calculateTotal()">2 1/2 - 4 yr</label><br>
+            <label class='radiolabel'><input type="radio" name="ageGroup" value="fourToFive" onclick="calculateTotal()">4 - 5 yr</label><br>
+            <h5>Choose the length of day</h5>
+            <label>Length of day</label>
+            <select id="lengthOfDay" name='lengthOfDay' onchange="calculateTotal()">
+              <option value="Half">Half</option>
+              <option value="Full">Full</option>
+            </select>
+            <br>
+            <h5>Select the number of days per week you wish to enroll</h5>
+            <label>Days per week</label>
+            <select id="daysperWeek" name='daysperWeek' onchange="calculateTotal()">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <br>
+            <h5>Select the time frame in which you want to calculate for</h5>
+            <label>Time frame</label>
+            <select id="timeframe" name='timeframe' onchange="calculateTotal()">
+              <option value="Weekly">Weekly</option>
+              <option value="Monthly">Monthly</option>
+              <option value="Quarterly">Quarterly</option>
+              <option value="biAnnually">Bi-Annually</option>
+              <option value="Yearly">Yearly</option>
+            </select>
+            <br>
+            <h5>Please check box for enrollment into summer program</h5>
+            <p>
+              <label for='includeSummerClass' class="inlinelabel">Summer class</label>
+              <input type="checkbox" id="includeSummerClass" name='includeSummerClass' onclick="calculateTotal()">
+            </p>
+            <h5>Please check box if child is not currently enrolled</h5>
+            <p>
+              <label class="inlinelabel" for='enrollmentFee'>Enrollment fee</label>
+              <input type="checkbox" id="enrollmentFee" name="enrollmentFee" onclick="calculateTotal()">
+            </p>
+            <div id="totalPrice"></div>
+            <br>
+          </div>
+          <input type="reset" value="Reset" onClick="formReset()">
+          <br>
+        </div>
+      </form>
+    </div>
+    <script src="js/calculator.js"></script>
+  </body>
+</html>
