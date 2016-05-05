@@ -1,2 +1,3 @@
 # ChildCareCalculator
-This was a final project for Programming Fundamentals Spring 2015.
+
+Estimate the cost of child care based on the user's selections.
